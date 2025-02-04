@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-red-100">
       <div className="text-center">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">Mugilan GC</h1>
         <h2 className="text-3xl text-gray-600 mb-8">Software Developer</h2>
