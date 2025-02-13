@@ -8,20 +8,20 @@ const About = () => {
   };
 
   return (
-    <div className="container mx-auto bg-gradient-to-r from-yellow-500 to-gray-500 px-4 py-8">
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-r from-yellow-500 to-gray-500 px-6 py-9">
       <h1 className="text-3xl font-bold text-gray-800 mb-8">
         Heyy!! Guys this is what Mugilan is about
       </h1>
       <div className="flex flex-col space-y-6">
         {/* Card 1: My Journey */}
         <div
-          className={`relative rounded-lg shadow-lg p-8 cursor-pointer transform transition-all duration-300 ${
+          className={`relative  rounded-lg shadow-lg p-5  cursor-pointer transform transition-all duration-300 ${
             isPopped === 'journey' ? 'scale-105' : 'scale-100'
           } bg-gradient-to-r from-purple-500 to-pink-500`}
           onClick={() => handleClick('journey')}
           title="Qurious ? Then why are you waiting for click here"
           >
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 p-5">
             From Passion to Proficiency: My Journey as a Software Developer
           </h2>
           <div
