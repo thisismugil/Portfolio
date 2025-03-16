@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import profile from "../components/assets/profile.jpg";
-import ShinyText from "../components/Shinytext"; // Import the ShinyText component
+import BG from "../components/assets/bg.jpeg";
+import BlurText from "../components/BlurText";
 
 const Home = ({ id }) => {
   const name = "Mugilan";
@@ -10,25 +10,36 @@ const Home = ({ id }) => {
     setTimeout(() => setAnimated(true), 100);
   }, []);
 
+  const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+  };
+
   return (
-    <section id={id} className="relative w-full h-screen overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${profile})`,
-          backgroundSize: "80%",
-          backgroundPosition: "center",
-          filter: "brightness(0.6)",
-        }}
-      ></div>
+    <section
+      id={id}
+      className="relative w-full h-screen overflow-hidden"
+      style={{
+        backgroundImage: `url(${BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        filter: "brightness(0.6)",
+      }}
+    >
       <div className="relative z-10 flex flex-col items-center justify-center h-screen text-white text-center">
         <h1 className="text-5xl font-bold mb-4 flex leading-[1.2] overflow-visible">
-          <ShinyText text={name} speed={3} className="text-5xl font-bold" />
+          <BlurText
+            text={name}
+            delay={150}
+            animateBy="letters"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
+            className="text-5xl font-bold"
+          />
         </h1>
         <h2
           className="text-3xl mb-8 leading-[1.2] overflow-visible"
           style={{
-            background: "linear-gradient(to right, yellow, white)",
+            background: "linear-gradient(to right, green, white)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}

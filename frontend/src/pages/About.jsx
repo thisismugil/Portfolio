@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import BG from "../components/assets/bg.jpeg";
 
-const About = () => {
+const About = ({ id }) => {
   const [isPopped, setIsPopped] = useState(null);
 
   const handleClick = (field) => {
@@ -8,19 +9,27 @@ const About = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gradient-to-r from-yellow-500 to-gray-500 px-6 py-9">
+    <div
+      id={id}
+      className="flex flex-col items-center min-h-screen px-6 py-9"
+      style={{
+        backgroundImage: `url(${BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        filter: "brightness(0.6)",
+      }}
+    >
       <h1 className="text-3xl font-bold text-gray-800 mb-8">
         Heyy!! Guys this is what Mugilan is about
       </h1>
       <div className="flex flex-col space-y-6">
-        {/* Card 1: My Journey */}
         <div
-          className={`relative  rounded-lg shadow-lg p-5  cursor-pointer transform transition-all duration-300 ${
+          className={`relative rounded-lg shadow-lg p-5 cursor-pointer transform transition-all duration-300 ${
             isPopped === 'journey' ? 'scale-105' : 'scale-100'
           } bg-gradient-to-r from-purple-500 to-pink-500`}
           onClick={() => handleClick('journey')}
           title="Qurious ? Then why are you waiting for click here"
-          >
+        >
           <h2 className="text-3xl font-bold text-gray-800 mb-8 p-5">
             From Passion to Proficiency: My Journey as a Software Developer
           </h2>
@@ -46,22 +55,21 @@ const About = () => {
               <p className="text-2xl font-bold text-gray-800 mb-6">Real-World Experience</p>
               <p>
               During my five-month internship as a software developer,
-              I gained hands-on experience working on real-world projects, 
-              collaborating with teams, and solving challenges that refined my problem-solving skills. 
+              I gained hands-on experience working on real-world projects,
+              collaborating with teams, and solving challenges that refined my problem-solving skills.
               This phase not only solidified my technical expertise but also strengthened my ability to adapt, learn, and innovate.
               </p>
               <p className="text-2xl font-bold text-gray-800 mb-6">Exploring AI & Beyond</p>
               <p>
               While my core expertise lies in web development,
-              I have also explored the fascinating world of AI and Machine Learning, 
-              gaining foundational knowledge that inspires me to integrate intelligent solutions into applications. 
+              I have also explored the fascinating world of AI and Machine Learning,
+              gaining foundational knowledge that inspires me to integrate intelligent solutions into applications.
               This curiosity drives me to keep learning and evolving, staying ahead in the ever-changing tech landscape.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Card 3: Why I Chose This Domain */}
         <div
           className={`relative rounded-lg shadow-lg p-8 cursor-pointer transform transition-all duration-300 ${
             isPopped === 'domain' ? 'scale-105' : 'scale-100'
