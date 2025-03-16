@@ -1,5 +1,5 @@
 import React from 'react';
-import BG from "../components/assets/bg.jpeg";
+import BG from "../components/assets/bg.png";
 
 function Experience({ id }) {
   return (

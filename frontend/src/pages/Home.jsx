@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import BG from "../components/assets/bg.jpeg";
+import BG from "../components/assets/bg.png";
 import BlurText from "../components/BlurText";
+import ConnectWithMe from "../components/ConnectWithMe"; // Import the new component
+import { ShinyButton } from "../components/magicui/shiny-button"; // Correct the import path
 
 const Home = ({ id }) => {
   const name = "Mugilan";
   const [animated, setAnimated] = useState(false);
+  const [showConnect, setShowConnect] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setAnimated(true), 100);
@@ -12,6 +15,10 @@ const Home = ({ id }) => {
 
   const handleAnimationComplete = () => {
     console.log('Animation completed!');
+  };
+
+  const handleConnectClick = () => {
+    setShowConnect((prevShowConnect) => !prevShowConnect);
   };
 
   return (
@@ -49,6 +56,12 @@ const Home = ({ id }) => {
         <p className="text-xl max-w-4xl font-bold text-center text-white p-4">
           I'm a passionate software developer with a keen interest in building innovative solutions
         </p>
+
+        <ShinyButton onClick={handleConnectClick}>
+          {showConnect ? "Hide " : "Let's Chat"}
+        </ShinyButton>
+
+        {showConnect && <ConnectWithMe />} {/* Toggle the ConnectWithMe component */}
       </div>
     </section>
   );
