@@ -2,6 +2,7 @@ import React from 'react';
 import BG from "../components/assets/bg.png";
 import { IconCloudDemo } from "../components/IconCloudDemo"; // Adjust the import path as needed
 
+//my skills
 const About = ({ id }) => {
   return (
     <div
