@@ -133,3 +133,11 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mugil1206@gmail.com'
+EMAIL_HOST_PASSWORD = 'hkfcxcjwbtdzbizf'
+DEFAULT_FROM_EMAIL = 'your-email@gmail.com'
+DEFAULT_TO_EMAIL = 'mugil1206@gmail.com'
