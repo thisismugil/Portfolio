@@ -28,7 +28,7 @@ function Contact({ id }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://cyr86t0k58.execute-api.ap-southeast-2.amazonaws.com/mugil/contact/', {
+      const response = await fetch('https://portfolio-backend-1-wvbq.onrender.com/contact/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
