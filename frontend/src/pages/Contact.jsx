@@ -28,7 +28,7 @@ function Contact({ id }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://127.0.0.1:8000/contact/', {
+      const response = await fetch('https://cyr86t0k58.execute-api.ap-southeast-2.amazonaws.com/mugil/contact/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
