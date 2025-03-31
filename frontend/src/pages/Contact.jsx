@@ -11,6 +11,9 @@ function Contact({ id }) {
     subject: '',
     message: ''
   });
+
+
+  
   const [showConnect, setShowConnect] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
 
