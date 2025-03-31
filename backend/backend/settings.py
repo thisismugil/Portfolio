@@ -11,11 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-ALLOWED_HOSTS = ['*']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -26,8 +25,11 @@ SECRET_KEY = "django-insecure-^)5e%*z-$tx4bu-d(mrlp!p%#dupvp%(^-v^n+gjqasrd+_yvp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'mugilan-portfolio.s3-website-ap-southeast-2.amazonaws.com',
+    'cyr86t0k58.execute-api.ap-southeast-2.amazonaws.com'
+    'd3bveyqx8101wf.cloudfront.net'
+]
 
 # Application definition
 
@@ -79,9 +81,11 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -127,9 +131,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  # React development server
-    'https://your-frontend-domain.com',  # Production domain
+CORS_ALLOWED_ORIGINS = [ 
+    'mugilan-portfolio.s3-website-ap-southeast-2.amazonaws.com',
+    'cyr86t0k58.execute-api.ap-southeast-2.amazonaws.com/mugil',
+    'https://d3bveyqx8101wf.cloudfront.net'
 ]
 CORS_ALLOW_CREDENTIALS = True
 
