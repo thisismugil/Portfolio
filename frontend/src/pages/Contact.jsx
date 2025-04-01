@@ -10,10 +10,7 @@ function Contact({ id }) {
     email: '',
     subject: '',
     message: ''
-  });
-
-
-  
+  });  
   const [showConnect, setShowConnect] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
 
